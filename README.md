@@ -1,113 +1,189 @@
-# 💧 Lembrete de Água - Versão Melhorada
+# 💧 Lembrete para Tomar Água - Versão Melhorada
 
-Uma versão **significativamente aprimorada** do protótipo original de lembrete para tomar água, agora com interface gráfica completa e funcionalidades avançadas.
+Uma aplicação Java completa e funcional para lembrar você de se manter hidratado ao longo do dia!
 
-## 🚀 Principais Melhorias
+## 🌟 Funcionalidades
 
-### ✨ Comparação: Antes vs Depois
+### ✨ Versão Original (LembreteAgua.java)
+- Console simples com timer básico
+- Mensagens de lembrete no terminal
 
-| **Protótipo Original** | **Versão Melhorada** |
-|----------------------|---------------------|
-| ❌ Apenas console | ✅ Interface gráfica moderna |
-| ❌ Um lembrete único | ✅ Lembretes recorrentes |
-| ❌ Sem acompanhamento | ✅ Tracking de consumo diário |
-| ❌ Funcionalidade básica | ✅ Sistema tray + notificações |
-| ❌ Sem persistência | ✅ Salva configurações |
-| ❌ Sem histórico | ✅ Log completo de atividades |
+### 🚀 Versão Melhorada (WaterReminderApp.java)
+- **Interface Gráfica Moderna**: Interface intuitiva com Java Swing
+- **Sistema de Notificações**: Alertas visuais e sonoros
+- **Bandeja do Sistema**: Minimização para system tray
+- **Configurações Personalizáveis**: 
+  - Intervalo entre lembretes (1-480 minutos)
+  - Meta diária de água (500-5000ml)
+  - Tamanho do copo padrão (50-1000ml)
+- **Rastreamento de Progresso**: 
+  - Contador de água consumida
+  - Barra de progresso visual
+  - Percentual da meta diária
+- **Persistência de Dados**: Configurações salvas automaticamente
+- **Histórico Detalhado**: Log completo de atividades com timestamps
+- **Validação de Meta**: Celebração ao atingir objetivo diário
 
-### 🔥 Novas Funcionalidades
+### 💡 Versão Simplificada (WaterReminderSimple.java) - **RECOMENDADA**
+- **Interface Funcional**: GUI simplificada que funciona em qualquer ambiente
+- **Compatibilidade Máxima**: Testada e funcionando no Linux
+- **System Tray Opcional**: Funciona com ou sem suporte à bandeja do sistema
+- **Todas as Funcionalidades**: Mantém recursos essenciais da versão completa
 
-- **🎯 Acompanhamento de Meta Diária**: Configure sua meta de hidratação e acompanhe o progresso
-- **⏰ Lembretes Inteligentes**: Configure intervalos personalizados (1-480 minutos)
-- **📊 Progresso Visual**: Barra de progresso colorida que muda conforme você atinge a meta
-- **🔔 Notificações do Sistema**: Funciona minimizado na bandeja do sistema
-- **📱 Interface Moderna**: Design limpo e intuitivo com cores e ícones
-- **💾 Persistência**: Suas configurações são salvas automaticamente
-- **📝 Histórico Detalhado**: Log completo de todas as atividades
-- **🎉 Conquistas**: Celebra quando você atinge sua meta diária
-- **🔄 Reset Diário**: Facilmente zere o contador para um novo dia
+## � Comparação de Versões
 
-## 🛠️ Como Usar
+| Funcionalidade | Versão Original | Versão Melhorada | Versão Simplificada |
+|----------------|-----------------|------------------|---------------------|
+| Interface | ❌ Console apenas | ✅ GUI completa | ✅ GUI funcional |
+| Notificações | ❌ Texto simples | ✅ Sistema + Som | ✅ Dialogs + Som |
+| Configurações | ❌ Fixas no código | ✅ Personalizáveis | ✅ Personalizáveis |
+| Progresso | ❌ Não rastreia | ✅ Barra visual | ✅ Barra visual |
+| Persistência | ❌ Não salva | ✅ Auto-save | ✅ Auto-save |
+| System Tray | ❌ Não suporta | ✅ Minimização | ⚠️ Opcional |
+| Histórico | ❌ Não mantém | ✅ Log completo | ✅ Log completo |
+| Compatibilidade | ✅ Universal | ⚠️ Requer ambiente completo | ✅ Universal |
 
-### Método 1: Script Automático (Recomendado)
+## 🔧 Requisitos do Sistema
+
+- **Java**: JDK 8 ou superior
+- **Sistema Operacional**: Windows, macOS, ou Linux
+- **Ambiente Gráfico**: Para interface GUI (X11 no Linux)
+- **Permissões**: Acesso à bandeja do sistema (opcional na versão simplificada)
+
+## � Como Executar
+
+### ⭐ Versão Simplificada (RECOMENDADA)
 ```bash
-./run.sh
+# Compilar e executar
+javac WaterReminderSimple.java
+java WaterReminderSimple
 ```
 
-### Método 2: Compilação Manual
+### Versão Original (Console)
+```bash
+javac LembreteAgua.java
+java LembreteAgua
+```
+
+### Versão Melhorada (GUI Completa)
+
+#### Opção 1: Execução Direta
 ```bash
 # Compilar
-javac WaterReminderImproved.java
+javac -cp . src/main/java/com/waterreminder/WaterReminderApp.java
 
 # Executar
-java WaterReminderImproved
+java -cp .:src/main/java com.waterreminder.WaterReminderApp
 ```
 
-## 📋 Pré-requisitos
+#### Opção 2: Usando Scripts
+```bash
+# Linux/macOS
+chmod +x run.sh
+./run.sh
 
-- **Java 8 ou superior** instalado no sistema
-- Sistema operacional com suporte a interface gráfica (GUI)
-- Para funcionalidade de system tray: ambiente desktop compatível
+# Windows
+run.bat
+```
 
-## 🎮 Como Funciona
+## 📖 Manual de Uso
 
-1. **Configure suas preferências**:
-   - Intervalo entre lembretes (ex: 30 minutos)
-   - Meta diária de água (ex: 2000ml)
-   - Tamanho do seu copo/garrafa (ex: 250ml)
+### � Configuração Inicial
+1. **Intervalo**: Define minutos entre lembretes (padrão: 30min)
+2. **Meta Diária**: Quantidade de água desejada por dia (padrão: 2000ml)
+3. **Tamanho do Copo**: Volume padrão por registro (padrão: 250ml)
 
-2. **Inicie os lembretes**: Clique em "▶️ Iniciar Lembretes"
+### ⏰ Controles Principais
+- **▶️ Iniciar Lembretes**: Ativa o sistema de notificações
+- **⏹️ Parar**: Desativa os lembretes temporariamente  
+- **💧 Bebi Água!**: Registra consumo manualmente
 
-3. **Registre seu consumo**: Sempre que beber água, clique em "💧 Registrar que Bebi Água"
+### � Monitoramento
+- **Progresso Visual**: Barra colorida indica % da meta
+- **Consumo Atual**: Total de água registrado hoje
+- **Histórico**: Log cronológico de todas as atividades
 
-4. **Acompanhe seu progresso**: Visualize em tempo real quanto já consumiu
+### 🔔 Notificações
+- **Som**: Beep do sistema ao lembrar
+- **Popup**: Balloon tip na bandeja do sistema (versão completa)
+- **Dialog**: Janela de confirmação em todas as versões
 
-5. **Execute em background**: Minimize para a bandeja do sistema
+## 🎨 Recursos Visuais
 
-## 🎨 Interface
+- **Interface Intuitiva**: Layout organizado com abas e painéis
+- **Ícones Expressivos**: Emojis para melhor UX
+- **Cores Dinâmicas**: Barra de progresso muda cor conforme meta
+- **Sistema Tray**: Ícone na bandeja para acesso rápido (quando suportado)
 
-A nova interface inclui:
+## � Estrutura do Projeto
 
-- **⚙️ Painel de Configurações**: Ajuste todas as preferências
-- **🎮 Controles**: Iniciar/parar lembretes e registrar consumo
-- **📊 Progresso Visual**: Barra colorida mostrando % da meta
-- **📝 Histórico**: Log detalhado com timestamps
-- **💡 Dicas**: Orientações para melhor uso
+```
+📦 alarmeaguaprototipo/
+├── � LembreteAgua.java             # Versão original simples
+├── 📄 WaterReminderSimple.java      # ⭐ Versão simplificada funcional
+├── 📁 src/main/java/com/waterreminder/
+│   ├── 📄 WaterReminderApp.java     # Versão melhorada completa
+│   └── 📄 WaterUtils.java           # Utilitários de hidratação
+├── 📄 TestJava.java                 # Teste de ambiente Java
+├── 📄 TestSwing.java                # Teste de interface Swing
+├── 📄 run.sh                        # Script para Linux/macOS
+├── 📄 run.bat                       # Script para Windows
+├── 📄 README.md                     # Esta documentação
+├── 📄 VERSION_COMPARISON.md         # Comparação detalhada
+└── 📄 IMPROVEMENTS_SUMMARY.md       # Resumo das melhorias
 
-## 🔧 Funcionalidades Técnicas
+```
 
-- **Persistência de Dados**: Usa Java Preferences API
-- **System Tray**: Integração completa com bandeja do sistema
-- **Timers Precisos**: Lembretes pontuais usando javax.swing.Timer
-- **Thread Safety**: Operações seguras em interface gráfica
-- **Tratamento de Erros**: Capturas adequadas de exceções
-- **Memory Management**: Limitação automática do histórico
+## 🐛 Solução de Problemas
 
-## 🏥 Benefícios para a Saúde
+### Erro: "class not found"
+```bash
+# Para versão simplificada
+javac WaterReminderSimple.java
+java WaterReminderSimple
 
-- **Hidratação Adequada**: Mantenha níveis ideais de água no corpo
-- **Melhora da Concentração**: Cérebro hidratado funciona melhor
-- **Prevenção de Dores de Cabeça**: Desidratação é causa comum
-- **Saúde da Pele**: Hidratação reflete na aparência
-- **Função Renal**: Ajuda os rins a filtrar toxinas
-- **Digestão**: Facilita processos digestivos
+# Para versão completa
+java -cp .:src/main/java com.waterreminder.WaterReminderApp
+```
 
-## 🔮 Futuras Melhorias
+### SystemTray não funciona
+- Use a versão simplificada que funciona sem system tray
+- No Linux: certifique-se que o DISPLAY está configurado
 
-Algumas ideias para próximas versões:
-- 📱 Versão mobile (Android/iOS)
-- 📈 Gráficos de progresso semanal/mensal
-- 🌡️ Ajuste automático baseado no clima
-- 🏃‍♂️ Integração com atividades físicas
-- 👥 Compartilhamento de conquistas
-- 🎵 Sons de lembrete personalizáveis
+### Erro de compilação
+```bash
+# Verificar versão do Java
+java -version
+javac -version
+
+# Testar ambiente
+javac TestJava.java && java TestJava
+javac TestSwing.java && java TestSwing
+```
+
+## 🎯 Próximas Melhorias
+
+- [ ] **Estatísticas Avançadas**: Gráficos de consumo semanal/mensal
+- [ ] **Múltiplos Perfis**: Configurações para diferentes usuários
+- [ ] **Integração Web**: Sincronização com apps de saúde
+- [ ] **Modo Escuro**: Tema alternativo para interface
+- [ ] **Sons Personalizados**: Diferentes alertas sonoros
+- [ ] **Exportar Dados**: Relatórios em PDF/CSV
 
 ## 📄 Licença
 
-Este projeto é uma evolução do protótipo original e está disponível para uso pessoal e educacional.
+Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+
+## 🤝 Contribuições
+
+Contribuições são sempre bem-vindas! Sinta-se à vontade para:
+
+1. 🍴 Fork o projeto
+2. 🌿 Criar uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. ✅ Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. 📤 Push para a branch (`git push origin feature/AmazingFeature`)
+5. 🔃 Abrir um Pull Request
 
 ---
 
-**💧 Mantenha-se hidratado e saudável! 💧**
-
-*Desenvolvido com ❤️ para promover hábitos saudáveis de hidratação*
+**Desenvolvido com ❤️ para promover uma vida mais saudável e hidratada! 💧**
